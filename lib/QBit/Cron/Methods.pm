@@ -69,7 +69,11 @@ sub import {
 
     foreach my $method (@{$pkg_stash->{'__CRON__'} || []}) {
         my ($name) =
-          grep {!ref($pkg_sym_table->{$_}) && $method->{'sub'} == \&{$pkg_sym_table->{$_}}} keys %$pkg_sym_table;
+          grep {
+                !ref($pkg_sym_table->{$_})
+              && defined(&{$pkg_sym_table->{$_}})
+              && $method->{'sub'} == \&{$pkg_sym_table->{$_}}
+          } keys %$pkg_sym_table;
 
         $method->{'attrs'} = $pkg_stash->{'__CRON_ATTRS__'}{$method->{'package'}, $method->{'sub'}} || {};
 
