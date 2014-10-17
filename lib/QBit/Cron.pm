@@ -108,7 +108,7 @@ sub get_lock {
     open($self->{'__LOCKS__'}{$name}{'fh'}, '>', $self->{'__LOCKS__'}{$name}{'file'})
       || throw gettext('Cannot create lock file "%s"', $self->{'__LOCKS__'}{$name}{'file'});
 
-    return flock($self->{'__LOCKS__'}{$name}{'fh'}, LOCK_EX);
+    return flock($self->{'__LOCKS__'}{$name}{'fh'}, LOCK_EX | LOCK_NB);
 }
 
 sub release_lock {
