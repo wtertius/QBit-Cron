@@ -1,3 +1,11 @@
+libqbit-cron-perl (0.002) raring; urgency=low
+
+  * Don't block on lock check.
+
+  * Do not create undefined subs in symbol table.
+
+ -- Sergei Svistunov <sergei-svistunov@yandex.ru>  Fri, 17 Oct 2014 11:12:51 +0400
+
 libqbit-cron-perl (0.001) raring; urgency=low
 
   * Initial commit
