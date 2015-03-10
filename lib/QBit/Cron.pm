@@ -57,7 +57,7 @@ sub do {
 
     if (defined($lock_name)) {
         unless ($self->get_lock($lock_name)) {
-            l gettext("Other %s->%s is running now, I'm exiting", $path, $method);
+            l gettext("Other %s->%s is running now, I'm exiting", $path, $method) unless $attrs->{'silent'};
             return;
         }
     }
