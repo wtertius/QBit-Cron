@@ -39,6 +39,8 @@ sub MODIFY_CODE_ATTRIBUTES {
             $package->_register_method($sub, $1);
         } elsif ($attr =~ /^LOCK(?:\s*\(\s*'\s*([\w\d_]+)\s*'\s*\))?$/) {
             $package->_set_method_attr($sub, lock => $1);
+        } elsif ($attr =~ /^SILENT$/) {
+            $package->_set_method_attr($sub, silent => TRUE);
         } else {
             push(@unknown_attrs, $attr);
         }
