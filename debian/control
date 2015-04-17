@@ -1,12 +1,14 @@
-Source: libqbit-cron-perl
+Source: libtertiusqbit-cron-perl
 Section: perl
 Priority: extra
-Maintainer: Sergei Svistunov <sergei-svistunov@yandex.ru>
-Build-Depends: debhelper (>= 8.0.0), perl, libqbit-perl, libqbit-application-perl
+Maintainer: Dmitry Lukiyanchuk <wtertius@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), perl, libtertiusqbit-perl, libtertiusqbit-application-perl
 Standards-Version: 3.9.4
 
-Package: libqbit-cron-perl
+Package: libtertiusqbit-cron-perl
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${perl:Depends}, perl, libqbit-perl, libqbit-application-perl
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${perl:Depends}, perl, libtertiusqbit-perl, libtertiusqbit-application-perl
+Conflicts: libqbit-cron-perl
+Replaces: libqbit-cron-perl
 Description: Class for working with Cron.
  Class for working with Cron.
