@@ -1,3 +1,9 @@
+libtertiusqbit-cron-perl (0.004) raring; urgency=low
+
+  * Rename debian package
+
+ -- Dmitry Lukiyanchuk <tertius@yandex-team.ru>  Fri, 17 Apr 2015 16:52:01 +0300
+
 libtertiusqbit-cron-perl (0.003) raring; urgency=low
 
   * Add attribute 'SILENT': don't print that other cron is running now.
